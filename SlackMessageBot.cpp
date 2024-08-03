@@ -19,16 +19,17 @@ int main() {
     HINTERNET hInternet = NULL, hConnect = NULL, hRequest = NULL;
     DWORD dwSize = 0;
     BOOL bResults = FALSE;
+    string channelId = "<channel_id_here>";
     wstring requestURL = L"slack.com";  
     wstring requestEndpoint = L"/api/chat.postMessage";  
-    wstring accessToken = L"<oauth_token_here>"; 
+    wstring accessToken = L"<slack_oauth_token_here>"; 
     wstring customHeaders = L"Content-Type: application/x-www-form-urlencoded\r\n";
     
     // Get console input for message
     cout << "Enter your desired message to post to Slack:" << "\n";
     string message;
     getline(cin, message);
-    string postData = "channel=<channel_id_here>&text=" + message; 
+    string postData = "channel=" + channelId + "&text=" + message; 
  
 
     // Initialize WinINet
